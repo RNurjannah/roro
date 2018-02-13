@@ -24,7 +24,7 @@ public class LoginBean implements Serializable {
 	private Circle circle;
 	private Square square;
 	private Biodata biodata;
-	//public String firstName = biodata.FirstName;
+
 	
 	@PostConstruct
 	public void init(){

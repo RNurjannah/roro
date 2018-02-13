@@ -18,11 +18,11 @@
 		
 	    		<h:panelGrid>
 	    			<h:outputText value="Name Awal"></h:outputText>
-	    			<h:inputText value="#{loginBean.biodata.FirstName}"></h:inputText>
+	    			<h:inputText value="#{loginBean.biodata.firstName}"></h:inputText>
 	    			<h:outputText value="Nama Akhir"></h:outputText>
-	    			<h:inputText value="#{loginBean.biodata.LastName}"></h:inputText>
+	    			<h:inputText value="#{loginBean.biodata.lastName}"></h:inputText>
 	    			<h:outputText value="Umur"></h:outputText>
-	    			<h:inputText value="#{loginBean.biodata.Age}" converter="javax.faces.Integer"></h:inputText>
+	    			<h:inputText value="#{loginBean.biodata.age}" converter="javax.faces.Integer"></h:inputText>
 	    		</h:panelGrid>
 	    		<h:commandButton value="Submit" action="#{loginBean.biodata.submit}"></h:commandButton>  
 		</h:form>

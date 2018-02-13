@@ -1,10 +1,10 @@
 package com.circle.model;
-//import javax.annotation.PostConstruct;
-//import javax.faces.bean.ManagedBean;
-//import javax.faces.bean.RequestScoped;
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//@ManagedBean(name="biodata1")
-//@RequestScoped 
+@ManagedBean
+@RequestScoped 
 @JsonIgnoreProperties(ignoreUnknown=true) 
 //@PostConstruct
 public class Biodata {
@@ -12,7 +12,7 @@ public class Biodata {
 	public String LastName;
 	public int Age;
 	public String result;
-	
+	public Biodata biodata;
 
 	
     // Must have no-argument constructor
@@ -20,7 +20,10 @@ public class Biodata {
 	public Biodata() {
 		
 	}
-
+//	@PostConstruct
+//	public void init(){
+//		biodata = new Biodata();
+//		}
 	public Biodata(String FirstName, String LastName, int Age) {
 		this.FirstName= FirstName;
 		this.LastName = LastName;
