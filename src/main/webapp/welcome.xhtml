@@ -8,10 +8,23 @@
 
 <ui:composition template="/templates/basic.xhtml">
 	<ui:define name="content">
-		<h:outputLabel value="Welcome #{loginBean.circle.firstName} #{loginBean.circle.lastName}"></h:outputLabel>
+		<!--  <h:outputLabel value="Welcome #{loginBean.circle.firstName} #{loginBean.circle.lastName}"></h:outputLabel>
 		<h:outputLabel value=" Square #{loginBean.square.name} #{loginBean.square.color}"></h:outputLabel>
 		<h:form>
 		<h:commandButton value="Back" action="login"></h:commandButton> 
+		</h:form>-->
+		
+		<h:form>
+		
+	    		<h:panelGrid>
+	    			<h:outputText value="Name Awal"></h:outputText>
+	    			<h:inputText value="#{loginBean.biodata.FirstName}"></h:inputText>
+	    			<h:outputText value="Nama Akhir"></h:outputText>
+	    			<h:inputText value="#{loginBean.biodata.LastName}"></h:inputText>
+	    			<h:outputText value="Umur"></h:outputText>
+	    			<h:inputText value="#{loginBean.biodata.Age}" converter="javax.faces.Integer"></h:inputText>
+	    		</h:panelGrid>
+	    		<h:commandButton value="Submit" action="#{loginBean.biodata.submit}"></h:commandButton>  
 		</h:form>
 	</ui:define>
 </ui:composition>

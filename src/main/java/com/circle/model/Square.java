@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Square {
 	private String name;
 	private String color;
+	
 	public String getName() {
 		return name;
 	}

@@ -16,6 +16,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.circle.model.Square;
+import com.circle.model.Biodata;
+
 
 
 public class RestClient {
@@ -39,6 +41,9 @@ public class RestClient {
     public Response createJsonSquare(Square square) {
         return client.target(REST_URI_SERVER).path("square").path("simpan").request(MediaType.APPLICATION_JSON).post(Entity.entity(square, MediaType.APPLICATION_JSON));
     }
+    public Response createJsonBiodata(Biodata biodata) {
+        return client.target(REST_URI_SERVER).path("biodata").path("simpan").request(MediaType.APPLICATION_JSON).post(Entity.entity(biodata, MediaType.APPLICATION_JSON));
+    }
 
     public Circle getJsonCircle(String name) {
 		return client.target(REST_URI_SERVER).path("circle").path("login").queryParam("name", name).request(MediaType.APPLICATION_JSON).get(Circle.class);
@@ -46,6 +51,10 @@ public class RestClient {
 
     public Square getJsonSquare(String name) {
 		return client.target(REST_URI_SERVER).path("square").path("search").queryParam("name", name).request(MediaType.APPLICATION_JSON).get(Square.class);
+    }
+    
+   public Biodata getJsonBiodata(String firstName) {
+		return client.target(REST_URI_SERVER).path("biodata").path("search").queryParam("firstName", firstName).request(MediaType.APPLICATION_JSON).get(Biodata.class);
     }
 
     public Circle getJsonCircleX(String name) {

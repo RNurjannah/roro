@@ -4,13 +4,17 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-
+import javax.annotation.PostConstruct;
 import com.circle.client.Circle;
 import com.circle.client.ClientService;
 import com.circle.model.Square;
+import com.circle.model.Biodata;
 
-@ManagedBean 
-@RequestScoped 
+
+@ManagedBean
+@RequestScoped
+
+
 public class LoginBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -19,6 +23,13 @@ public class LoginBean implements Serializable {
 	private String password;
 	private Circle circle;
 	private Square square;
+	private Biodata biodata;
+	//public String firstName = biodata.FirstName;
+	
+	@PostConstruct
+	public void init(){
+		biodata = new Biodata();
+		}
 	
 	public Square getSquare() {
 		return square;
@@ -26,6 +37,13 @@ public class LoginBean implements Serializable {
 
 	public void setSquare(Square square) {
 		this.square = square;
+	}
+	
+	public Biodata getBiodata() {
+		return biodata;
+	}
+	public void setBiodata(Biodata biodata) {
+		this.biodata = biodata;
 	}
 
 	public String login() {

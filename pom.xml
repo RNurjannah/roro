@@ -104,6 +104,13 @@
         <version>1.0.4</version>
     </dependency>
     
+    	<dependency>
+  <!--  Only bundled with java 1.6+ -->
+  			<groupId>javax.annotation</groupId>
+  			<artifactId>jsr250-api</artifactId>
+  			<version>1.0</version>
+		</dependency>
+    
     <!-- <dependency>
         <groupId>javax</groupId>
         <artifactId>javaee-api</artifactId>
@@ -144,6 +151,8 @@
     			<groupId>org.glassfish.jersey.core</groupId>
     			<artifactId>jersey-client</artifactId>
 		</dependency>
+		
+
     
   </dependencies>
 
